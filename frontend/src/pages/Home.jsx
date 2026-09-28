@@ -1,8 +1,6 @@
-import './App.css'
-
-function App() {
+function Home() {
   return (
-    <div className="min-h-screen flex flex-col items-center justify-center">
+    <div>
       <h1 className="text-5xl font-bold">
         Ceylora
       </h1>
@@ -14,4 +12,4 @@ function App() {
   )
 }
 
-export default App
+export default Home
