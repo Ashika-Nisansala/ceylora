@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom'
 function ProductCard({ product }) {
   return (
     <div className="border rounded-lg p-4">
@@ -15,11 +16,14 @@ function ProductCard({ product }) {
         International Price: ${product.internationalPrice}
       </p>
 
-      <button className="mt-4 px-4 py-2 border rounded">
+     <Link
+        to={`/products/${product.id}`}
+        className="inline-block mt-4 px-4 py-2 border rounded">
         View Product
-      </button>
+        </Link>
     </div>
   )
 }
 
 export default ProductCard
+
