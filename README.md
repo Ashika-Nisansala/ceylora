@@ -56,11 +56,8 @@ database integration, payments, and deployment will be added progressively.
 
 ## Future Plans
 
-- User authentication
-- PostgreSQL database
-- Order management
+
 - Online payments
-- Seller marketplace
 - Custom gift box builder
 - AI shopping assistant
 - Interactive 3D product showcase
