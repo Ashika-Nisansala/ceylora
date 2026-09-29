@@ -32,69 +32,67 @@ function Navbar() {
 
   return (
     <>
-      {/* Top Banner Announcement */}
-      <div className="bg-[#12291E] text-[#FAF7F2] text-xs py-2 px-4 text-center border-b border-[#C5A059]/20 flex items-center justify-between">
-        <div className="hidden sm:block text-[#C5A059] font-medium">
-           Authentic Sri Lankan Heritage & Direct Origin
+      {/* Quiet Top Banner */}
+      <div className="bg-[#12291E] text-[#FAF7F2] text-xs py-2 px-4 border-b border-white/10 flex items-center justify-between">
+        <div className="hidden sm:block text-white/80 text-[11px]">
+          Certified Sri Lankan Harvest & Direct Shipping
         </div>
-        <div className="mx-auto sm:mx-0 flex items-center gap-3 font-light tracking-wide">
-          <span>Free Express Shipping on Orders Over Rs. 15,000 / $50 USD</span>
+        <div className="mx-auto sm:mx-0 text-[11px] text-white/90 font-light">
+          Free shipping on orders over Rs. 15,000 / $50 USD
         </div>
-        {/* Currency Switcher */}
-        <div className="hidden md:flex items-center gap-1.5 bg-[#1B3B2B] px-2.5 py-0.5 rounded-full border border-[#C5A059]/30 text-[11px]">
+        <div className="hidden md:flex items-center gap-2 text-[11px]">
           <GlobeIcon className="w-3.5 h-3.5 text-[#C5A059]" />
           <button
             onClick={() => setCurrency('LKR')}
-            className={`px-1.5 py-0.5 rounded transition ${currency === 'LKR' ? 'font-bold text-[#C5A059]' : 'text-white/70 hover:text-white'}`}
+            className={`transition ${currency === 'LKR' ? 'font-bold text-[#C5A059]' : 'text-white/70 hover:text-white'}`}
           >
-            LKR (Rs)
+            LKR
           </button>
-          <span className="text-[#C5A059]/40">|</span>
+          <span className="text-white/30">|</span>
           <button
             onClick={() => setCurrency('USD')}
-            className={`px-1.5 py-0.5 rounded transition ${currency === 'USD' ? 'font-bold text-[#C5A059]' : 'text-white/70 hover:text-white'}`}
+            className={`transition ${currency === 'USD' ? 'font-bold text-[#C5A059]' : 'text-white/70 hover:text-white'}`}
           >
-            USD ($)
+            USD
           </button>
         </div>
       </div>
 
-      {/* Main Sticky Navbar */}
-      <header className="sticky top-0 z-40 bg-[#FAF7F2]/95 backdrop-blur-md border-b border-[#E8DFD1] shadow-xs">
+      {/* Main Header */}
+      <header className="sticky top-0 z-40 bg-[#FAF7F2]/95 backdrop-blur-md border-b border-[#E8DFD1]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex items-center justify-between h-20">
 
-            {/* Mobile menu hamburger toggle */}
+            {/* Mobile hamburger */}
             <button
               onClick={() => setMobileMenuOpen(true)}
-              className="lg:hidden p-2 text-[#1B3B2B] hover:text-[#9E472A] focus:outline-hidden"
-              aria-label="Open mobile menu"
+              className="lg:hidden p-2 text-[#1B3B2B] hover:text-[#9E472A]"
+              aria-label="Open menu"
             >
               <MenuIcon className="w-6 h-6" />
             </button>
 
             {/* Brand Logo */}
             <Link to="/" className="flex flex-col">
-              <span className="text-2xl sm:text-3xl font-serif font-bold text-[#1B3B2B] tracking-tight hover:text-[#9E472A] transition-colors flex items-center gap-1.5">
+              <span className="text-2xl sm:text-3xl font-serif text-[#1B3B2B] tracking-tight hover:text-[#9E472A] transition-colors">
                 Ceylora
-                <span className="w-2 h-2 rounded-full bg-[#C5A059] inline-block"></span>
               </span>
-              <span className="text-[10px] tracking-widest uppercase text-[#9A7734] font-medium -mt-1">
+              <span className="text-[10px] text-[#5C6764] font-medium -mt-1">
                 Discover the best of Sri Lanka
               </span>
             </Link>
 
-            {/* Navigation Links (Desktop) */}
+            {/* Nav Links in Sans-Serif */}
             <nav className="hidden lg:flex items-center gap-8 text-sm font-medium text-[#1C2826]">
               <Link
                 to="/"
-                className={`hover:text-[#9E472A] transition-colors ${isActive('/') ? 'text-[#9E472A] font-bold border-b-2 border-[#9E472A] pb-0.5' : ''}`}
+                className={`hover:text-[#9E472A] transition-colors ${isActive('/') ? 'text-[#9E472A] font-semibold border-b-2 border-[#9E472A] pb-0.5' : ''}`}
               >
                 Home
               </Link>
               <Link
                 to="/products"
-                className={`hover:text-[#9E472A] transition-colors ${isActive('/products') ? 'text-[#9E472A] font-bold border-b-2 border-[#9E472A] pb-0.5' : ''}`}
+                className={`hover:text-[#9E472A] transition-colors ${isActive('/products') ? 'text-[#9E472A] font-semibold border-b-2 border-[#9E472A] pb-0.5' : ''}`}
               >
                 Shop
               </Link>
@@ -106,10 +104,9 @@ function Navbar() {
               </Link>
               <Link
                 to="/gifts"
-                className={`hover:text-[#9E472A] transition-colors flex items-center gap-1 ${isActive('/gifts') ? 'text-[#9E472A] font-bold border-b-2 border-[#9E472A] pb-0.5' : ''}`}
+                className={`hover:text-[#9E472A] transition-colors ${isActive('/gifts') ? 'text-[#9E472A] font-semibold border-b-2 border-[#9E472A] pb-0.5' : ''}`}
               >
-                <span>Gifts</span>
-                <span className="bg-[#C5A059]/20 text-[#9A7734] text-[10px] font-bold px-1.5 py-0.5 rounded-full">New</span>
+                Gifts
               </Link>
               <a
                 href="#origin-story"
@@ -119,10 +116,9 @@ function Navbar() {
               </a>
             </nav>
 
-            {/* Action Buttons */}
+            {/* Actions */}
             <div className="flex items-center gap-3 sm:gap-4">
 
-              {/* Search Toggle Button */}
               <button
                 onClick={() => setSearchOpen(!searchOpen)}
                 className="p-2 text-[#1C2826] hover:text-[#9E472A] transition-colors"
@@ -131,7 +127,6 @@ function Navbar() {
                 <SearchIcon className="w-5 h-5" />
               </button>
 
-              {/* Wishlist Link */}
               <Link
                 to="/products?wishlist=true"
                 className="relative p-2 text-[#1C2826] hover:text-[#9E472A] transition-colors hidden sm:block"
@@ -145,7 +140,6 @@ function Navbar() {
                 )}
               </Link>
 
-              {/* Shopping Bag / Cart Button */}
               <Link
                 to="/cart"
                 className="relative p-2 text-[#1B3B2B] hover:text-[#9E472A] transition-colors"
@@ -159,37 +153,36 @@ function Navbar() {
                 )}
               </Link>
 
-              {/* User Login/Profile */}
               <Link
                 to="/login"
-                className="hidden sm:flex items-center gap-2 px-3 py-1.5 border border-[#E8DFD1] hover:border-[#1B3B2B] rounded-xl text-xs font-semibold text-[#1B3B2B] transition-colors bg-white shadow-xs"
+                className="hidden sm:flex items-center gap-1.5 px-3 py-1.5 border border-[#E8DFD1] hover:border-[#1B3B2B] rounded-xl text-xs font-semibold text-[#1B3B2B] transition-colors bg-white"
               >
-                <UserIcon className="w-4 h-4" />
-                <span>Login</span>
+                <UserIcon className="w-3.5 h-3.5" />
+                <span>Account</span>
               </Link>
 
             </div>
           </div>
         </div>
 
-        {/* Search Modal Bar */}
+        {/* Search Input Bar */}
         {searchOpen && (
-          <div className="border-t border-[#E8DFD1] bg-[#F4EFE6] px-4 py-3 animate-fadeIn">
-            <form onSubmit={handleSearchSubmit} className="max-w-3xl mx-auto flex items-center gap-2">
+          <div className="border-t border-[#E8DFD1] bg-[#F4EFE6] px-4 py-3">
+            <form onSubmit={handleSearchSubmit} className="max-w-xl mx-auto flex items-center gap-2">
               <div className="relative flex-1">
-                <SearchIcon className="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-[#5C6764]" />
+                <SearchIcon className="absolute left-3.5 top-1/2 -translate-y-1/2 w-4 h-4 text-[#5C6764]" />
                 <input
                   type="text"
-                  placeholder="Search Ceylon Tea, Cinnamon, Spices, Kithul, Oils..."
+                  placeholder="Search Ceylon tea, cinnamon, spices..."
                   value={searchQuery}
                   onChange={(e) => setSearchQuery(e.target.value)}
                   autoFocus
-                  className="w-full pl-9 pr-4 py-2 bg-white rounded-xl border border-[#E8DFD1] text-xs text-[#1C2826] focus:outline-hidden focus:border-[#1B3B2B]"
+                  className="w-full pl-9 pr-4 py-2 bg-white rounded-xl border border-[#E8DFD1] text-xs text-[#1C2826] focus:outline-hidden"
                 />
               </div>
               <button
                 type="submit"
-                className="px-4 py-2 bg-[#1B3B2B] text-[#FAF7F2] text-xs font-medium rounded-xl hover:bg-[#9E472A] transition-colors"
+                className="px-4 py-2 bg-[#1B3B2B] text-[#FAF7F2] text-xs font-semibold rounded-xl hover:bg-[#9E472A] transition-colors"
               >
                 Search
               </button>
@@ -205,31 +198,27 @@ function Navbar() {
         )}
       </header>
 
-      {/* Mobile Menu Slide-out Overlay */}
+      {/* Mobile Drawer */}
       {mobileMenuOpen && (
         <div className="fixed inset-0 z-50 lg:hidden">
           <div
-            className="fixed inset-0 bg-black/60 backdrop-blur-xs"
+            className="fixed inset-0 bg-black/50"
             onClick={() => setMobileMenuOpen(false)}
           />
-          <div className="fixed inset-y-0 left-0 w-4/5 max-w-sm bg-[#FAF7F2] p-6 shadow-2xl flex flex-col justify-between overflow-y-auto">
+          <div className="fixed inset-y-0 left-0 w-4/5 max-w-sm bg-[#FAF7F2] p-6 shadow-xl flex flex-col justify-between overflow-y-auto">
             <div>
               <div className="flex items-center justify-between mb-8 pb-4 border-b border-[#E8DFD1]">
                 <Link to="/" onClick={() => setMobileMenuOpen(false)} className="flex flex-col">
-                  <span className="text-2xl font-serif font-bold text-[#1B3B2B]">Ceylora</span>
-                  <span className="text-[9px] uppercase tracking-widest text-[#9A7734]">Discover Sri Lanka</span>
+                  <span className="text-2xl font-serif text-[#1B3B2B]">Ceylora</span>
+                  <span className="text-[10px] text-[#5C6764]">Discover Sri Lanka</span>
                 </Link>
-                <button
-                  onClick={() => setMobileMenuOpen(false)}
-                  className="p-2 text-[#1C2826]"
-                >
+                <button onClick={() => setMobileMenuOpen(false)} className="p-2 text-[#1C2826]">
                   <CloseIcon className="w-6 h-6" />
                 </button>
               </div>
 
-              {/* Currency Selector for Mobile */}
               <div className="mb-6 p-3 bg-white rounded-xl border border-[#E8DFD1] flex items-center justify-between text-xs">
-                <span className="text-[#5C6764] font-medium">Currency:</span>
+                <span className="text-[#5C6764]">Currency:</span>
                 <div className="flex gap-2">
                   <button
                     onClick={() => setCurrency('LKR')}
@@ -246,68 +235,25 @@ function Navbar() {
                 </div>
               </div>
 
-              {/* Navigation list */}
-              <nav className="flex flex-col gap-4 text-base font-medium text-[#1C2826]">
-                <Link
-                  to="/"
-                  onClick={() => setMobileMenuOpen(false)}
-                  className="hover:text-[#9E472A] py-1 border-b border-[#E8DFD1]/50"
-                >
-                  Home
-                </Link>
-                <Link
-                  to="/products"
-                  onClick={() => setMobileMenuOpen(false)}
-                  className="hover:text-[#9E472A] py-1 border-b border-[#E8DFD1]/50"
-                >
-                  Shop All Products
-                </Link>
-                <Link
-                  to="/products?category=Tea"
-                  onClick={() => setMobileMenuOpen(false)}
-                  className="hover:text-[#9E472A] py-1 border-b border-[#E8DFD1]/50"
-                >
-                  Ceylon Tea
-                </Link>
-                <Link
-                  to="/products?category=Spices"
-                  onClick={() => setMobileMenuOpen(false)}
-                  className="hover:text-[#9E472A] py-1 border-b border-[#E8DFD1]/50"
-                >
-                  Authentic Spices
-                </Link>
-                <Link
-                  to="/gifts"
-                  onClick={() => setMobileMenuOpen(false)}
-                  className="hover:text-[#9E472A] py-1 border-b border-[#E8DFD1]/50 flex items-center justify-between"
-                >
-                  <span>Curated Gift Boxes</span>
-                  <span className="bg-[#C5A059] text-[#12291E] text-xs px-2 py-0.5 rounded-full font-bold">New</span>
-                </Link>
-                <Link
-                  to="/cart"
-                  onClick={() => setMobileMenuOpen(false)}
-                  className="hover:text-[#9E472A] py-1 border-b border-[#E8DFD1]/50 flex items-center justify-between"
-                >
-                  <span>Shopping Cart</span>
-                  {cartCount > 0 && (
-                    <span className="bg-[#1B3B2B] text-[#C5A059] text-xs px-2 py-0.5 rounded-full font-bold">
-                      {cartCount}
-                    </span>
-                  )}
+              <nav className="flex flex-col gap-4 text-sm font-medium text-[#1C2826]">
+                <Link to="/" onClick={() => setMobileMenuOpen(false)} className="py-2 border-b border-[#E8DFD1]/50">Home</Link>
+                <Link to="/products" onClick={() => setMobileMenuOpen(false)} className="py-2 border-b border-[#E8DFD1]/50">Shop Products</Link>
+                <Link to="/gifts" onClick={() => setMobileMenuOpen(false)} className="py-2 border-b border-[#E8DFD1]/50">Gifts</Link>
+                <Link to="/cart" onClick={() => setMobileMenuOpen(false)} className="py-2 border-b border-[#E8DFD1]/50 flex justify-between">
+                  <span>Cart</span>
+                  {cartCount > 0 && <span className="bg-[#1B3B2B] text-[#C5A059] text-xs px-2 py-0.5 rounded-full">{cartCount}</span>}
                 </Link>
               </nav>
             </div>
 
-            {/* Auth Link in Mobile Menu */}
             <div className="pt-6 border-t border-[#E8DFD1]">
               <Link
                 to="/login"
                 onClick={() => setMobileMenuOpen(false)}
-                className="w-full flex items-center justify-center gap-2 py-3 bg-[#1B3B2B] text-[#FAF7F2] font-semibold text-sm rounded-xl"
+                className="w-full flex items-center justify-center gap-2 py-3 bg-[#1B3B2B] text-[#FAF7F2] font-medium text-xs rounded-xl"
               >
                 <UserIcon className="w-4 h-4" />
-                <span>Sign In / Register</span>
+                <span>Sign In</span>
               </Link>
             </div>
           </div>
