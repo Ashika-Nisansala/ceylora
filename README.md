@@ -1,16 +1,75 @@
-# React + Vite
+# Ceylora
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+**Discover the best of Sri Lanka.**
 
-Currently, two official plugins are available:
+Ceylora is a full-stack e-commerce platform I'm developing to connect
+Sri Lankan products with local and international customers.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+The platform focuses on authentic Sri Lankan products such as Ceylon tea,
+spices, kithul products, gift collections, and locally crafted products.
 
-## React Compiler
+## Current Features
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+- Product browsing
+- Product details
+- Product categories
+- Gift collections
+- Shopping cart
+- Wishlist
+- Local and international pricing
+- Responsive user interface
 
-## Expanding the ESLint configuration
+## Tech Stack
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+### Frontend
+- React
+- Vite
+- Tailwind CSS
+- React Router
+
+### Backend — Planned
+- Node.js
+- Express.js
+- PostgreSQL
+- Prisma
+- JWT authentication
+
+### DevOps — Planned
+- Docker
+- GitHub Actions
+- AWS
+
+## Project Structure
+
+ceylora/
+├── frontend/
+├── backend/ (planned)
+├── .gitignore
+└── README.md
+
+## Project Status
+
+🚧 Currently under development.
+
+The frontend is being developed first. Backend services, authentication,
+database integration, payments, and deployment will be added progressively.
+
+## Future Plans
+
+- User authentication
+- PostgreSQL database
+- Order management
+- Online payments
+- Seller marketplace
+- Custom gift box builder
+- AI shopping assistant
+- Interactive 3D product showcase
+- Dockerized deployment
+- CI/CD pipeline
+
+## Author
+
+**Ashika Nisansala**
+
+Software Engineering Undergraduate  
+University of Sri Jayewardenepura
