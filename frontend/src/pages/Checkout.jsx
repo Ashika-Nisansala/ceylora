@@ -11,7 +11,7 @@ import {
 } from '../components/IconHelpers'
 
 function Checkout() {
-  const { cart, formatPrice, currency, setCurrency, subtotalLKR, subtotalUSD, clearCart } = useShop()
+  const { cart, formatPrice, currency, setCurrency, subtotalLKR, subtotalUSD, clearCart, user } = useShop()
   const navigate = useNavigate()
 
   const [customerType, setCustomerType] = useState('local') // 'local' | 'international'
@@ -21,9 +21,9 @@ function Checkout() {
   const [orderId, setOrderId] = useState('')
 
   const [form, setForm] = useState({
-    firstName: '',
-    lastName: '',
-    email: '',
+    firstName: user?.firstName || '',
+    lastName: user?.name ? user.name.split(' ').slice(1).join(' ') : '',
+    email: user?.email || '',
     phone: '',
     address: '',
     city: '',
@@ -48,6 +48,32 @@ function Checkout() {
     setOrderId(generatedId)
     setOrderPlaced(true)
     clearCart()
+  }
+
+  if (!user && !orderPlaced) {
+    return (
+      <div className="min-h-[60vh] bg-[#FAF7F2] flex items-center justify-center p-6 text-center">
+        <div className="bg-white rounded-3xl border border-[#E8DFD1] p-10 max-w-md w-full shadow-sm space-y-5">
+          <div className="w-14 h-14 rounded-full bg-[#1B3B2B]/10 text-[#1B3B2B] flex items-center justify-center mx-auto">
+            <LockIcon className="w-7 h-7 text-[#1B3B2B]" />
+          </div>
+          <h1 className="text-2xl font-serif font-bold text-[#1B3B2B]">
+            Sign In Required for Checkout
+          </h1>
+          <p className="text-xs text-[#5C6764] leading-relaxed">
+            Please sign in or create a Ceylora account to complete your purchase and receive order tracking.
+          </p>
+          <div className="pt-2">
+            <Link
+              to="/login?redirect=/checkout"
+              className="inline-block w-full py-3.5 bg-[#1B3B2B] text-[#FAF7F2] text-xs font-bold uppercase tracking-wider rounded-xl hover:bg-[#9E472A] transition shadow-md"
+            >
+              Sign In / Register
+            </Link>
+          </div>
+        </div>
+      </div>
+    )
   }
 
   if (cart.length === 0 && !orderPlaced) {

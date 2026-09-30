@@ -34,7 +34,7 @@ const giftBoxes = [
     image: 'https://images.unsplash.com/photo-1509358271058-acd22cc93898?auto=format&fit=crop&q=80&w=800',
     includedItems: [
       'Grade Alba Ceylon Cinnamon Quills (100g)',
-      'Jumbo Green Cardamom Pods (100g)',
+      'Pure Cinnamon Bark Oil (10ml)',
       'Sun-dried Black Pepper Corns (150g)',
       'Whole Ceylon Cloves & Nutmeg with Mace',
       'Ceramic Spice Grinder with Brass Trim'

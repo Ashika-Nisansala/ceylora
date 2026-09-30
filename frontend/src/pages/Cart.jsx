@@ -5,7 +5,7 @@ import QuantitySelector from '../components/QuantitySelector'
 import { TrashIcon, ArrowRightIcon, CartIcon, ShieldIcon, TruckIcon } from '../components/IconHelpers'
 
 function Cart() {
-  const { cart, removeFromCart, updateQuantity, clearCart, formatPrice, currency, subtotalLKR, subtotalUSD } = useShop()
+  const { cart, removeFromCart, updateQuantity, clearCart, formatPrice, currency, subtotalLKR, subtotalUSD, user } = useShop()
   const [promoCode, setPromoCode] = useState('')
   const [discountPercent, setDiscountPercent] = useState(0)
   const [couponError, setCouponError] = useState('')
@@ -229,7 +229,7 @@ function Cart() {
 
               {/* Checkout Link */}
               <Link
-                to="/checkout"
+                to={user ? "/checkout" : "/login?redirect=/checkout"}
                 className="w-full py-4 bg-[#1B3B2B] hover:bg-[#9E472A] text-[#FAF7F2] font-bold text-xs uppercase tracking-wider rounded-xl transition shadow-md flex items-center justify-center gap-2"
               >
                 <span>Proceed to Checkout</span>

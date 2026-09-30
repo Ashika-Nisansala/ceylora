@@ -76,29 +76,56 @@ const products = [
   },
   {
     id: 4,
-    name: 'Green Cardamom Pods Jumbo Harvest',
-    category: 'Spices',
-    localPrice: 3100,
-    internationalPrice: 21.00,
-    rating: 4.88,
-    reviewsCount: 76,
-    image: 'https://images.unsplash.com/photo-1608797178974-15b35a64ede9?auto=format&fit=crop&q=80&w=800',
+    name: 'Virgin Coconut Oil',
+    category: 'Natural Oils',
+    localPrice: 1950,
+    internationalPrice: 13.00,
+    rating: 4.91,
+    reviewsCount: 132,
+    image: 'https://images.unsplash.com/photo-1620916566398-39f1143ab7be?auto=format&fit=crop&q=80&w=800',
     images: [
-      'https://images.unsplash.com/photo-1608797178974-15b35a64ede9?auto=format&fit=crop&q=80&w=800'
+      'https://images.unsplash.com/photo-1620916566398-39f1143ab7be?auto=format&fit=crop&q=80&w=800'
     ],
-    tag: 'Jumbo Size • Aromatic',
+    tag: 'Cold Pressed • 100% Pure',
     isFeatured: true,
-    isNew: true,
-    description: 'Plump, vivid green cardamom pods selected from the Central Highlands. Delivers sweet eucalyptus and warm citrus fragrance.',
-    origin: 'Kandy Hill Country, Sri Lanka',
-    weight: '100g Glass Jar',
+    isNew: false,
+    description: 'Cold-pressed from fresh organic Sri Lankan coconuts in the Coconut Triangle of Kurunegala. Ideal for natural skincare, haircare, and healthy culinary use.',
+    origin: 'Coconut Triangle (Kurunegala), Sri Lanka',
+    weight: '500ml Glass Container',
     specifications: [
-      { label: 'Grade', value: 'LG (Large Green Pods)' },
-      { label: 'Flavor Profile', value: 'Sweet, Camphorous, Zesty' }
+      { label: 'Extraction', value: 'First Cold Press (< 45°C)' },
+      { label: 'Lauric Acid', value: '52% High Purity' },
+      { label: 'Purity', value: '100% Raw & Unrefined' },
+      { label: 'Shelf Life', value: '24 Months' }
     ]
   },
   {
     id: 5,
+    name: 'Cinnamon Oil',
+    category: 'Natural Oils',
+    localPrice: 3200,
+    internationalPrice: 21.50,
+    rating: 4.95,
+    reviewsCount: 88,
+    image: 'https://images.unsplash.com/photo-1608571423902-eed4a5ad8108?auto=format&fit=crop&q=80&w=800',
+    images: [
+      'https://images.unsplash.com/photo-1608571423902-eed4a5ad8108?auto=format&fit=crop&q=80&w=800'
+    ],
+    tag: 'Steam Distilled • Pure Bark Extract',
+    isFeatured: true,
+    isNew: true,
+    description: 'Steam-distilled from authentic Ceylon Cinnamon bark in Southern Sri Lanka. Rich in cinnamaldehyde with a warm, spicy fragrance and therapeutic wellness properties.',
+    origin: 'Galle, Sri Lanka',
+    weight: '30ml Dropper Bottle',
+    specifications: [
+      { label: 'Extraction Method', value: 'Traditional Steam Distillation' },
+      { label: 'Source Material', value: 'True Ceylon Cinnamon Bark (Cinnamomum verum)' },
+      { label: 'Grade', value: 'Therapeutic Grade 100% Pure' },
+      { label: 'Shelf Life', value: '36 Months' }
+    ]
+  },
+  {
+    id: 6,
     name: 'Pure Artisanal Kithul Treacle (Syrup)',
     category: 'Delicacies',
     localPrice: 2400,
@@ -122,53 +149,7 @@ const products = [
     ]
   },
   {
-    id: 6,
-    name: 'Organic Cold-Pressed Virgin Coconut Oil',
-    category: 'Natural Oils',
-    localPrice: 1950,
-    internationalPrice: 13.00,
-    rating: 4.91,
-    reviewsCount: 132,
-    image: 'https://images.unsplash.com/photo-1620916566398-39f1143ab7be?auto=format&fit=crop&q=80&w=800',
-    images: [
-      'https://images.unsplash.com/photo-1620916566398-39f1143ab7be?auto=format&fit=crop&q=80&w=800'
-    ],
-    tag: 'Cold Pressed • Raw Coconut',
-    isFeatured: false,
-    isNew: false,
-    description: 'Extracted within hours of harvesting fresh coconuts from the Coconut Triangle of Kurunegala. Silky texture with subtle natural tropical scent.',
-    origin: 'Coconut Triangle (Kurunegala), Sri Lanka',
-    weight: '500ml Glass Container',
-    specifications: [
-      { label: 'Extraction', value: 'First Cold Press (< 45°C)' },
-      { label: 'Lauric Acid', value: '52% High Purity' }
-    ]
-  },
-  {
     id: 7,
-    name: 'Hand-Carved Raksha Wooden Mask',
-    category: 'Handcrafted',
-    localPrice: 6500,
-    internationalPrice: 42.00,
-    rating: 4.96,
-    reviewsCount: 52,
-    image: 'https://images.unsplash.com/photo-1579783902614-a3fb3927b675?auto=format&fit=crop&q=80&w=800',
-    images: [
-      'https://images.unsplash.com/photo-1579783902614-a3fb3927b675?auto=format&fit=crop&q=80&w=800'
-    ],
-    tag: 'Heritage Art • Hand-Painted',
-    isFeatured: true,
-    isNew: true,
-    description: 'Crafted by master artisans in Ambalangoda using sustainable Kaduru wood and natural botanical paints. Symbolizes protection, peace, and prosperity.',
-    origin: 'Ambalangoda Coastal Heritage Centre, Sri Lanka',
-    weight: '800g Wall Art Piece',
-    specifications: [
-      { label: 'Material', value: 'Kaduru Wood (Strychnos nux-vomica)' },
-      { label: 'Craftsmanship', value: '100% Hand-Carved & Hand-Painted' }
-    ]
-  },
-  {
-    id: 8,
     name: 'Whole Nutmeg with Mace Aril',
     category: 'Spices',
     localPrice: 1750,
@@ -203,7 +184,7 @@ export const categories = [
   {
     id: 'spices',
     name: 'Ceylon Spices',
-    tagline: 'Alba Cinnamon, high-piperine pepper, green cardamom & cloves.',
+    tagline: 'Alba Cinnamon, high-piperine pepper, cloves & nutmeg.',
     image: 'https://images.unsplash.com/photo-1509358271058-acd22cc93898?auto=format&fit=crop&q=80&w=800',
     count: 24
   },
@@ -217,16 +198,9 @@ export const categories = [
   {
     id: 'oils',
     name: 'Natural Oils',
-    tagline: 'Virgin coconut oil, citronella, lemongrass & essential botanical oils.',
+    tagline: 'Virgin coconut oil, cinnamon oil & essential botanical oils.',
     image: 'https://images.unsplash.com/photo-1620916566398-39f1143ab7be?auto=format&fit=crop&q=80&w=800',
     count: 14
-  },
-  {
-    id: 'handcrafted',
-    name: 'Handcrafted Arts',
-    tagline: 'Wooden masks, brassware, handloom textiles & natural reed crafts.',
-    image: 'https://images.unsplash.com/photo-1579783902614-a3fb3927b675?auto=format&fit=crop&q=80&w=800',
-    count: 16
   }
 ]
 

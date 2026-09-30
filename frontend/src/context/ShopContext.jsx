@@ -25,7 +25,89 @@ export function ShopProvider({ children }) {
     return localStorage.getItem('ceylora_currency') || 'LKR'
   })
 
+  const [user, setUser] = useState(() => {
+    try {
+      const saved = localStorage.getItem('ceylora_user')
+      return saved ? JSON.parse(saved) : null
+    } catch {
+      return null
+    }
+  })
+
+  const [registeredUsers, setRegisteredUsers] = useState(() => {
+  try {
+    const saved = localStorage.getItem('ceylora_registered_users')
+    return saved ? JSON.parse(saved) : []
+  } catch {
+    return []
+  }
+})
+  
+
   const [toast, setToast] = useState(null)
+
+  useEffect(() => {
+    if (user) {
+      localStorage.setItem('ceylora_user', JSON.stringify(user))
+    } else {
+      localStorage.removeItem('ceylora_user')
+    }
+  }, [user])
+
+  useEffect(() => {
+    localStorage.setItem('ceylora_registered_users', JSON.stringify(registeredUsers))
+  }, [registeredUsers])
+
+
+  const registerUser = ({ fullName, email, password }) => {
+  const cleanEmail = email.trim().toLowerCase()
+
+  const exists = registeredUsers.some(
+    (u) => u.email.toLowerCase() === cleanEmail
+  )
+
+  if (exists) {
+    return {
+      success: false,
+      message: 'An account with this email already exists. Please sign in.'
+    }
+  }
+
+  const newUserRecord = {
+    fullName: fullName.trim(),
+    email: cleanEmail,
+    password
+  }
+
+  setRegisteredUsers((prev) => [...prev, newUserRecord])
+
+  showToast('Account created successfully! Please login.')
+
+  return { success: true }
+}
+    
+  
+
+  const loginUser = (email, password) => {
+    const cleanEmail = email.trim().toLowerCase()
+    const foundUser = registeredUsers.find((u) => u.email.toLowerCase() === cleanEmail)
+    if (!foundUser) {
+      return { success: false, message: 'No account found with this email. Please register first.' }
+    }
+    if (foundUser.password !== password) {
+      return { success: false, message: 'Invalid password. Please check your password and try again.' }
+    }
+    const firstName = foundUser.fullName.trim().split(' ')[0]
+    const userSession = { name: foundUser.fullName, firstName, email: foundUser.email }
+    setUser(userSession)
+    showToast(`Welcome back, ${firstName}!`)
+    return { success: true }
+  }
+
+  const logout = () => {
+    setUser(null)
+    showToast('You have been logged out.')
+  }
 
   useEffect(() => {
     localStorage.setItem('ceylora_cart', JSON.stringify(cart))
@@ -134,6 +216,10 @@ export function ShopProvider({ children }) {
         wishlistCount,
         subtotalLKR,
         subtotalUSD,
+        user,
+        registerUser,
+        loginUser,
+        logout,
         toast
       }}
     >

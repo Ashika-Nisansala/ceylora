@@ -10,6 +10,7 @@ import Gifts from './pages/Gifts'
 import Cart from './pages/Cart'
 import Auth from './pages/Auth'
 import Checkout from './pages/Checkout'
+import About from './pages/About'
 
 function App() {
   return (
@@ -23,6 +24,7 @@ function App() {
               <Route path="/products" element={<Products />} />
               <Route path="/products/:id" element={<ProductDetails />} />
               <Route path="/gifts" element={<Gifts />} />
+              <Route path="/about" element={<About />} />
               <Route path="/cart" element={<Cart />} />
               <Route path="/login" element={<Auth />} />
               <Route path="/register" element={<Auth />} />
