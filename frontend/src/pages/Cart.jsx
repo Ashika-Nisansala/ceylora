@@ -47,7 +47,7 @@ function Cart() {
             Your Shopping Bag is Empty
           </h1>
           <p className="text-xs sm:text-sm text-[#5C6764] leading-relaxed">
-            Discover single-origin Ceylon Teas, Alba Cinnamon, Kithul delicacies, and artisan gifts to fill your bag.
+            Discover single origin Ceylon Teas, Alba Cinnamon, Kithul delicacies, and artisan gifts to fill your cart.
           </p>
           <div className="pt-2">
             <Link
@@ -149,7 +149,7 @@ function Cart() {
               <Link to="/products" className="hover:text-[#1B3B2B] font-semibold flex items-center gap-1">
                 ← Continue Shopping
               </Link>
-              <span>Items in Bag: {cart.length}</span>
+              <span>Items in Cart: {cart.length}</span>
             </div>
           </div>
 

@@ -226,8 +226,8 @@ export function ShopProvider({ children }) {
       {children}
       {/* Toast notification overlay */}
       {toast && (
-        <div className="fixed bottom-6 right-6 z-50 bg-[#1B3B2B] text-[#FAF7F2] px-5 py-3 rounded-xl shadow-2xl border border-[#C5A059]/40 flex items-center gap-3 animate-bounce">
-          <span className="w-2.5 h-2.5 rounded-full bg-[#C5A059]" />
+        <div className="fixed bottom-6 right-6 z-50 bg-tea-dark text-cream-base px-5 py-3 rounded-xl shadow-2xl border border-gold-accent/40 flex items-center gap-3 animate-bounce">
+          <span className="w-2.5 h-2.5 rounded-full bg-gold-accent" />
           <span className="text-sm font-medium">{toast}</span>
         </div>
       )}

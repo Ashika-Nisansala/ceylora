@@ -16,7 +16,7 @@ function Footer() {
   }
 
   return (
-    <footer className="bg-[#12291E] text-[#FAF7F2] border-t border-white/10 pt-14 pb-10">
+    <footer className=" bg-tea-dark text-cream-base border-t border-white/10 pt-14 pb-10">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
         <div className="grid grid-cols-1 md:grid-cols-12 gap-8 pb-10 border-b border-white/10 text-xs">
@@ -24,7 +24,7 @@ function Footer() {
           {/* Brand & Brief Statement */}
           <div className="md:col-span-5 space-y-3">
             <Link to="/" className="inline-block">
-              <span className="text-2xl font-serif text-[#FAF7F2] tracking-tight">
+              <span className="text-2xl font-serif text-cream-base tracking-tight">
                 Ceylora
               </span>
             </Link>
@@ -35,7 +35,7 @@ function Footer() {
 
           {/* Shop Nav */}
           <div className="md:col-span-3 space-y-2">
-            <h4 className="font-semibold text-[#C5A059] text-xs">Shop</h4>
+            <h4 className="font-semibold text-gold-accent text-xs">Shop</h4>
             <ul className="space-y-1.5 text-white/70">
               <li><Link to="/products?category=Tea" className="hover:text-white transition">Ceylon Tea</Link></li>
               <li><Link to="/products?category=Spices" className="hover:text-white transition">Alba Cinnamon & Spices</Link></li>
@@ -46,7 +46,7 @@ function Footer() {
 
           {/* Newsletter */}
           <div className="md:col-span-4 space-y-3">
-            <h4 className="font-semibold text-[#C5A059] text-xs">Newsletter</h4>
+            <h4 className="font-semibold text-gold-accent text-xs">Newsletter</h4>
             <p className="text-white/70">Receive seasonal harvest updates and gift collection previews.</p>
             
             <form onSubmit={handleSubscribe} className="flex max-w-xs">
@@ -60,12 +60,12 @@ function Footer() {
               />
               <button
                 type="submit"
-                className="px-3.5 py-2 bg-[#C5A059] hover:bg-[#9A7734] text-[#12291E] font-semibold text-xs rounded-r-lg transition"
+                className="px-3.5 py-2 bg-gold-accent hover:bg-gold-dark text-tea-dark font-semibold text-xs rounded-r-lg transition"
               >
                 Join
               </button>
             </form>
-            {subscribed && <p className="text-[11px] text-[#C5A059]">✓ Subscribed to Ceylora updates.</p>}
+            {subscribed && <p className="text-[11px] text-gold-accent">✓ Subscribed to Ceylora updates.</p>}
           </div>
 
         </div>
